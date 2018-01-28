@@ -1,9 +1,16 @@
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\MyFileSystem.exe.config
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\MyFileSystem.exe
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\MyFileSystem.pdb
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\CSkin.dll
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\MaterialSkin.dll
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\bin\Debug\CSkin.xml
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.csprojResolveAssemblyReference.cache
-D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.Form1.resources
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.CommandLine.resources
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.FileSystemUI.resources
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.ItemPanel.resources
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.Properties.Resources.resources
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.ViTextArea.resources
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.csproj.GenerateResource.Cache
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.exe
 D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.pdb
+D:\Program Files (x86)\Visual Studio 2012\Projects\MyFileSystem\MyFileSystem\obj\Debug\MyFileSystem.Notepad.resources

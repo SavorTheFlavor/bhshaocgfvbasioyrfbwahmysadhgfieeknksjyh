@@ -7,56 +7,38 @@ using System.Threading.Tasks;
 
 namespace MyFileSystem
 {
-    class MyDisk
-    {
+    [Serializable]
+    class MyDisk {
 
-        Block[] blocks ;
+        public Block[] blocks;
+        FAT fat;
 
-        MyDisk()
-        {
-            blocks = new Block[128];
-            FAT fat = new FAT(blocks[0], blocks[1]);
-            
+        public MyDisk() {
+            blocks = new Block[128];//只是引用...........
+            for(int i = 0;i<blocks.Length;i++){
+                blocks[i] = new Block();
+            }
+            fat = new FAT(blocks[0], blocks[1]);
+        }
+
+        public Block allocate() {
+            //search from the FAT for a spare space
+            byte[] table = fat.getTable();
+            for (int i = 2; i < table.Length; i++) {
+                if (table[i] == (byte)0) {
+                    blocks[i].num = i;
+                    table[i] = (byte)255;
+                    fat.updateBlock();
+                    return blocks[i];
+                }
+            }
+            return null;
         }
 
 
-        class Block
-        {
-           public byte[] content = new byte[64];
+        public FAT getFAT() {
+            return this.fat;
         }
-        class FAT {
-            private byte[] table;
-            private Block b1;
-            private Block b2;
-            public FAT(Block b1, Block b2) {
-                table = new byte[b1.content.Length*2];
-                this.b1 = b1;//disk[0]
-                this.b2 = b2;//disk[1]
-                blockUpdateToTable();
-            }
 
-            public byte[] getTable() {
-                blockUpdateToTable();
-                return table;
-            }
-            //把文件分配表的内容更新到块里
-            public void updateBlock() {
-                for (int i = 0; i < this.b1.content.Length; i++) {
-                    b1.content[i] = this.table[i];
-                }
-                for (int i = this.b1.content.Length; i < this.b1.content.Length * 2; i++) {
-                    b2.content[i - this.b1.content.Length] = this.table[i];
-                }
-            }
-
-            private void blockUpdateToTable() {
-                for (int i=0; i < this.b1.content.Length; i++) {
-                    this.table[i] = b1.content[i];
-                }
-                for (int i = this.b1.content.Length; i < this.b1.content.Length*2; i++) {
-                    this.table[i] = b2.content[i];
-                }
-            }
-        }
     }
 }

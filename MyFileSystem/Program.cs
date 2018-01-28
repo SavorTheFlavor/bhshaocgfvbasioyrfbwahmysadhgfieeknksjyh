@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace MyFileSystem
 {
@@ -16,7 +19,24 @@ namespace MyFileSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            BinaryFormatter bformatter = new BinaryFormatter();
+
+            FileSystem fs = null;
+            Stream inStream = null;
+            try {
+                inStream = new FileStream("mydisk.dat", FileMode.Open, FileAccess.Read);
+                fs = (FileSystem)bformatter.Deserialize(inStream);
+            }
+            catch {
+                fs = new FileSystem();
+            }
+            finally {
+                if(inStream != null)
+                     inStream.Close();
+            }
+            FileSystemUI fsui = new FileSystemUI(fs);
+            Application.Run(fsui);
         }
     }
 }
