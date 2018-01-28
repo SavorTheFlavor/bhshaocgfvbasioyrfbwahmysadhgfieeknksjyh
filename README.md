@@ -1,2 +1,3 @@
 # MyFileSystem
-A simple file system that slightly imitates the UI of win7 file manager and the command line of Ubuntu.
+
+![演示中](https://github.com/SavorTheFlavor/MyFileSystem/raw/master/images/homepage.png)
